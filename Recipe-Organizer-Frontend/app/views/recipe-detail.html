@@ -1,0 +1,9 @@
+<label>Name: </label>
+{{ recipe.name }}
+<br>
+<label>Description: </label>
+{{ recipe.description }}
+<br>
+<ul>
+    <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
+</ul>
