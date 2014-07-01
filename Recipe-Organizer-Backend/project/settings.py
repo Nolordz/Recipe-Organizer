@@ -1,5 +1,5 @@
 """
-Django settings for djangular_rest_seed project.
+Django settings for recipe_organizer project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=a4q%x-9zbud0^^cbo+l7xz$n*w%-vj2f19#cxl6#r*e)-d057'
+SECRET_KEY = 'o#f(+x9vxujrltt(*gz0ylkr544n#4lo+x=m6$p&k##h)lk59w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,9 +39,11 @@ INSTALLED_APPS = (
     'apps.public',
     'south',
     'rest_framework',
+    'corsheaders',
 )
 
 MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,3 +85,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000',
+    'localhost/',
+)
+
+CORS_ORIGIN_ALLOW_ALL = True
