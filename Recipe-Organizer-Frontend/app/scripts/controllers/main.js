@@ -2,16 +2,15 @@
 
 /**
  * @ngdoc function
- * @name recipeOrganizerFrontendApp.controller:MainCtrl
+ * @name recipeOrganizerFrontApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the recipeOrganizerFrontendApp
+ * Controller of the recipeOrganizerFrontApp
  */
-angular.module('recipeOrganizerFrontendApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+angular.module('recipeOrganizerFrontApp')
+    .controller('MainCtrl', function ($scope, Restangular) {
+        Restangular.all('recipes').getList().then(function (data) {
+            $scope.recipes = data;
+            console.log(data);
+        });
+    });

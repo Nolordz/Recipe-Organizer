@@ -30,7 +30,7 @@ angular
             })
             .when('/recipes/:recipeId', {
    
-             templateUrl: 'views/recipe-details.html',
+             templateUrl: 'views/recipe-detail.html',
                 controller: 'RecipeDetailCtrl'
             })
             .otherwise({
