@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the recipeOrganizerFrontendApp
  */
-angular.module('recipeOrganizerFrontendApp')
+angular.module('recipeOrganizerFrontApp')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

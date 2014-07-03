@@ -13,4 +13,5 @@ angular.module('recipeOrganizerFrontApp')
             $scope.recipes = data;
             console.log(data);
         });
+
     });

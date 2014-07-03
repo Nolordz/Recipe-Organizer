@@ -6,8 +6,8 @@ from django.db import models
 class Recipe(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(default="No description has been entered yet")
-    ingredients = models.ManyToManyField('Ingredient')
-
+    ingredients = models.ManyToManyField('Ingredient', null=True, blank= True)
+    photo = models.CharField(max_length=100,null=True,blank=True)
     def __unicode__(self):
         return self.name
 

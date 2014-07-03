@@ -1,9 +1,17 @@
+<div><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="../images/{{ recipe.photo }}"></a></div>
+
+<br>
 <label>Name: </label>
-{{ recipe.name }}
+<div>{{ recipe.name }}</div>
 <br>
 <label>Description: </label>
-{{ recipe.description }}
+<div>{{ recipe.description }}</div>
 <br>
+<label>Ingredients: </label>
 <ul>
     <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
 </ul>
+
+
+
+<button class="btn btn-sm btn-danger fa fa-trash-o" ng-click="deleteRecipe()"> Delete</button>

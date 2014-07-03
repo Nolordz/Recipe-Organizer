@@ -25,3 +25,8 @@ class IngredientList(generics.ListAPIView):
 class IngredientDetail(generics.RetrieveUpdateDestroyAPIView):
     model = Ingredient
     serializer_class = IngredientSerializer
+
+class AddRecipe(generics.CreateAPIView):
+    model = Recipe
+    serializer_class = RecipeSerializer
+    queryset = Ingredient.objects.all()

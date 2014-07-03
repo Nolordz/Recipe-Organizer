@@ -21,7 +21,7 @@ angular
     .config(function ($routeProvider, RestangularProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'views/main.html',
+                templateUrl: 'views/index.home.html',
                 controller: 'MainCtrl'
             })
             .when('/about', {
@@ -29,10 +29,13 @@ angular
                 controller: 'AboutCtrl'
             })
             .when('/recipes/:recipeId', {
-   
-             templateUrl: 'views/recipe-detail.html',
+                templateUrl: 'views/recipe-detail.html',
                 controller: 'RecipeDetailCtrl'
             })
+            .when('/add-recipe', {
+                templateUrl: 'views/add-recipe.html',
+                controller: 'AddRecipeCtrl'
+        })
             .otherwise({
                 redirectTo: '/'
             });
