@@ -21,7 +21,7 @@
     </textarea>
 </div>
 
-<button class="btn btn-md btn-info" ng-click="saveNewrecipe()">addRecipe</button>
+
 
 <!--<div class="col-md-2">
     <label>Total Time</label>
@@ -37,13 +37,17 @@ ontrol margin-bottom-20" type="text" ng-model="recipe.total_time">
 
 
 
-<div class="col-md-3 clear">
+<div class="col-md-6 clear">
     <label>Ingredients</label>
     <input class="form-control form-inline"
            type="text"
-           ng-model="ingredientName"
-           typeahead="ingredient.name for ingredient in ingredients | filter:$viewValue | limitTo:20"
+           ng-model="addedIngredient"
            placeholder="Enter an Ingredient">
+    <br>
+    <button class="btn" ng-click="saveNewIngredient()"> Add Ingredient</button>
+    <br>
+    <br>
+    <button class="btn" ng-click="saveNewRecipe()"> Add Recipe</button>
 
     <ol>
         <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>

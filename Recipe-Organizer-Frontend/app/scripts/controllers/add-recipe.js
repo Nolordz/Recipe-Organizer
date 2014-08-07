@@ -10,7 +10,16 @@
 angular.module('recipeOrganizerFrontApp')
     .controller('AddRecipeCtrl', function ($scope, Restangular) {
         $scope.recipe = {};
+        $scope.recipe.ingredients= [];
+
+        $scope.saveNewIngredient = function(){
+            $scope.newIngredient = {name:$scope.addedIngredient};
+            $scope.recipe.ingredients.push($scope.newIngredient);
+        };
+
         $scope.saveNewRecipe = function () {
+
+
 
             Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
                 $scope.status = alert("The recipe was successfully created!");

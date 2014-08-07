@@ -21,12 +21,12 @@ angular
     .config(function ($routeProvider, RestangularProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'views/index.home.html',
+                templateUrl: 'views/main.html',
                 controller: 'MainCtrl'
             })
-            .when('/about', {
-                templateUrl: 'views/about.html',
-                controller: 'AboutCtrl'
+            .when('/recipes', {
+                templateUrl: 'views/recipes.html',
+                controller: 'MainCtrl'
             })
             .when('/recipes/:recipeId', {
                 templateUrl: 'views/recipe-detail.html',

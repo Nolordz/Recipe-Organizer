@@ -1,15 +1,13 @@
+<br>
+<br>
 <div class="container">
   <div class="row">
-    <h1>Welcome to the recipe organizer!</h1>
-    <div ng-repeat="recipe in recipes"><a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></div>
+    <input type="text" ng-model="search" placeholder="Search recipes">
 
-
-
-
-
+    <div ng-repeat="recipe in recipes | filter:search | orderBy:name"><a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></div>
 
     <hr>
-    <a href="http://bootply.com/71401">Edit on Bootply</a>
+
     <hr>
   </div>
 </div>
