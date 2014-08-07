@@ -1,39 +1,14 @@
 <br>
 <br>
-<div class="container">
+ <hr>
+<div class="col-md-6">
   <div class="row">
-    <input type="text" ng-model="search" placeholder="Search recipes">
+
+    <input type="text" class="form-control" ng-model="search" placeholder="Search recipes">
+
 
     <div ng-repeat="recipe in recipes | filter:search | orderBy:name"><a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></div>
 
-    <hr>
 
-    <hr>
   </div>
 </div>
-<div class="modal" id="myModal" role="dialog">
-  <div class="modal-dialog">
-  <div class="modal-content">
-	<div class="modal-header">
-		<button class="close" type="button" data-dismiss="modal">×</button>
-		<h3 class="modal-title"></h3>
-	</div>
-	<div class="modal-body">
-		<div id="modalCarousel" class="carousel">
-
-          <div class="carousel-inner">
-
-          </div>
-
-          <a class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-          <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-
-        </div>
-	</div>
-	<div class="modal-footer">
-		<button class="btn btn-default" data-dismiss="modal">Close</button>
-	</div>
-   </div>
-  </div>
-</div>
-<script src="scripts/scripts.js"></script>

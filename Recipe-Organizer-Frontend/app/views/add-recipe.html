@@ -21,6 +21,17 @@
     </textarea>
 </div>
 
+<div class="col-md-6">
+    <label>Directions</label>
+    <textarea
+            type="text"
+            ng-model="recipe.directions"
+            placeholder="Why is this a great recipe? Does it have a history?"
+            class="form-control"
+            rows="10">
+    </textarea>
+</div>
+
 
 
 <!--<div class="col-md-2">
@@ -50,6 +61,6 @@ ontrol margin-bottom-20" type="text" ng-model="recipe.total_time">
     <button class="btn" ng-click="saveNewRecipe()"> Add Recipe</button>
 
     <ol>
-        <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+        <li ng-repeat="ingredient in recipe.ingredients_data">{{ ingredient.name }}</li>
     </ol>
 </div>

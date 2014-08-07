@@ -10,11 +10,14 @@
 angular.module('recipeOrganizerFrontApp')
     .controller('AddRecipeCtrl', function ($scope, Restangular) {
         $scope.recipe = {};
-        $scope.recipe.ingredients= [];
+        $scope.recipe.ingredients = [];
+        $scope.recipe.ingredients_data = [];
 
         $scope.saveNewIngredient = function(){
-            $scope.newIngredient = {name:$scope.addedIngredient};
-            $scope.recipe.ingredients.push($scope.newIngredient);
+            Restangular.one('ingredient-by-name').customPUT({'name': $scope.addedIngredient}).then(function(ingredient) {
+                $scope.recipe.ingredients_data.push(ingredient);
+                $scope.recipe.ingredients.push(ingredient.id);
+            });
         };
 
         $scope.saveNewRecipe = function () {

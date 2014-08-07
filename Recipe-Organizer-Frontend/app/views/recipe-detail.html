@@ -7,9 +7,12 @@
 <label>Description: </label>
 <div>{{ recipe.description }}</div>
 <br>
+<label>Directions: </label>
+<div>{{ recipe.directions }}</div>
+<br>
 <label>Ingredients: </label>
 <ul>
-    <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name}}</li>
+    <li ng-repeat="ingredient in recipe.ingredients_data">{{ ingredient.name}}</li>
 </ul>
 
 
