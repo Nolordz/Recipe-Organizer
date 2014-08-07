@@ -7,15 +7,13 @@ class IngredientSerializer(serializers.ModelSerializer):
         model = Ingredient
 
 
-
-
-
 class RecipeSerializer(serializers.ModelSerializer):
-    ingredients = IngredientSerializer(many= True)
+    ingredients_data = serializers.SerializerMethodField('get_ingredient_data')
+
+    def get_ingredient_data(self, obj):
+        return IngredientSerializer(obj.ingredients.all(), many=True).data
+
     class Meta:
         model = Recipe
-
-
-
-
-
+        # fields = ('id','name','ingredients','description','photo')
+        # depth = 1

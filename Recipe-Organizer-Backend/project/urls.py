@@ -16,6 +16,6 @@ urlpatterns = patterns(
     url(r'^add-recipe$', AddRecipe.as_view(), name='add-recipe'),
 
     url(r'^ingredients$', IngredientList.as_view(), name='ingredient-list'),
+    url(r'^ingredient-by-name$', get_ingredient_by_name, name='ingredient-by-name'),
     url(r'^ingredients/(?P<pk>[0-9]+)$', IngredientDetail.as_view(), name='ingredient-detail'),
-
 )
